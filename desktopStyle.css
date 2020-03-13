@@ -1,0 +1,372 @@
+#main {
+  
+}
+#title {
+  
+}
+header {
+  position: relative;
+  top: 30px;
+  text-align: center;
+  font-family: Bungee Outline, monospace;
+/*   color: yellow; */
+  margin: auto 23% 70px 23%;
+  padding-top: 1px;
+  padding-bottom: 0px;
+  border-collapse: separate;
+  border: 8px solid red;
+  border-radius: 20px;
+  background-color: black;
+/*   box-shadow: 15px 10px 50px; */
+}
+
+h1 {
+  position: relative;
+  top: -10px;
+  font-size: 60px;
+  line-height: 12pt;
+  color: yellow;
+  padding: 10px 10px;
+}
+
+#header-text {
+  position: relative;
+  font-family: helvetica;
+  font-size: 25px;
+  line-height: 6pt;
+  color: white;
+  font-weight: 400;
+/*   font: normal; */
+}
+
+#img-div {
+  position: relative;
+  top: -20px;
+  width: 100%;
+	display: grid;
+	height: auto;
+  align-content: center;
+  background: black;
+}
+
+#image {
+  border-radius: 50%;
+  max-width: 100%;
+	display: block;
+	height: auto;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#img-caption {
+  text-align: center;
+  font-family: helvetica, monospace;
+  font-size: 1.2em;
+  color: white;
+}
+h2 {
+  text-align: center;
+  background: white;
+}
+#tribute-info {
+  position: relative;
+  font-family: helvetica, monospace;
+  text-align: left;
+  margin-left: 20%;
+  font-size: 1.1em;
+  
+}
+#tribute-link {
+  font-family: helvetica, monospace;
+  font-size: 1.1em;
+}
+
+footer {
+  font-family: helvetica, monospace;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+/* PATH OF TRAVEL */
+
+.path {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  background-color: red;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* @media (max-width: 1000px) {
+  .path {
+    background-color: red;
+    transform: scale(0.5);
+  }
+} */
+  .path::after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-top: 12px dotted white;
+    width: 95%;
+    left: 2.5%;
+    top: 50%;
+    margin-top: -6px;
+}
+
+/* PACMAN */
+
+.pacman {
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  animation: movePmanForward 16s linear infinit; /* Add 'e' to infinite */
+}
+
+.pacman::before, .pacman::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border: 30px solid #FFEE00;
+  margin-top: -30px;
+  border-radius: 50%;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  
+}
+
+.pacman::after{
+  border-color: #FFEE00;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  animation: mouthBottom 0.7s ease infinit; /* Add 'e' to infinite */
+
+}
+
+.pacman::before {
+  animation: mouthTop 0.7s ease infinit; /* Add 'e' to infinite */
+}
+
+/* BLACKOUT */
+
+.blackout {
+  position: absolute;
+  display: block;
+  background: black;
+  width: 150%;
+  height: 25px;
+  z-index: 98;
+  top: 40px;
+  left: -120%;
+  animation: moveBlackout 16s linear infinit; /* Add 'e' to infinite */
+}
+
+/* ALIVE GHOST */
+
+.ghostAlive {
+  position: absolute;
+  z-index: 99;
+  width: 60px;
+  height: 70px;
+  background: red;
+  top: 50%;
+  left: -20%;
+  margin-top: -35px;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  animation: moveAliveGhost 16s linear infinit; /* Add 'e' to infinite */
+  animation-delay: 0.7s;
+}
+
+.ghostAlive::before, .ghostAlive::after {
+  content: "";
+  position: absolute;
+  background: white;
+  width: 20px;
+  height: 25px;
+  border-radius: 50%;
+  top: 15px;
+  left: 4px;
+}
+
+.ghostAlive::after {
+  left: 30px;
+}
+
+.eyesAlive::before, .eyesAlive::after {
+  content: '';
+  position: absolute;
+  background: blue;
+  width: 10px;
+  height: 10px;
+  left: 13px;
+  top: 25px;
+  border-radius: 50%;
+}
+
+.eyesAlive::after {
+  left: 40px;
+  z-index: 99;
+}
+
+.skirtAlive, .skirtAlive::before, .skirtAlive:after {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border: 10px solid black;
+  border-top-color: transparent;
+  bottom: -10px;
+}
+
+.skirtAlive::before {
+  content: "";
+  left: 10px;
+}
+
+.skirtAlive::after {
+  content: "";
+  left: 30px;
+}
+
+/* DEAD GHOST */
+
+.ghostDead {
+  position: absolute;
+  z-index: 99;
+  width: 60px;
+  height: 70px;
+  background: blue;
+  top: 50%;
+  left: 120%;
+  margin-top: -35px;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  animation: moveDeadGhost 16s linear infinit, ghostFlash 0.5s linear infinit; /* Add 'e' to infinite */
+}
+
+.ghostDead::before, .ghostDead::after {
+  content: "";
+  position: absolute;
+  background: white;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  top: 25px;
+  left: 12px;
+}
+
+.ghostDead::after {
+  left: 36px;
+}
+
+.mouthDead::before {
+  content: '';
+  position: absolute;
+  background: white;
+  width: 40px;
+  height: 2px;
+  left: 10px;
+  top: 48px;
+}
+
+
+.skirtDead, .skirtDead::before, .skirtDead:after {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border: 10px solid black;
+  border-top-color: transparent;
+  bottom: -10px;
+}
+
+.skirtDead::before {
+  content: "";
+  left: 10px;
+}
+
+.skirtDead::after {
+  content: "";
+  left: 30px;
+}
+
+/* ANIMATIONS */
+
+@keyframes mouthTop {
+  50% {
+    transform: rotate(44deg);
+  }
+}
+
+@keyframes mouthBottom {
+  50% {
+    transform: rotate(-44deg);
+  }
+}
+
+@keyframes movePmanForward {
+  0% {
+    left: -20%;
+  }
+  50% {
+    transform: rotate(0deg);
+    left: 120%;
+  }
+  51% {
+    transform: rotate(180deg);
+    left: 120%;
+  }
+  100% {
+    transform: rotate(180deg);
+    left: 0%;
+  }
+}
+
+@keyframes moveDeadGhost {
+  0% {
+    left: 120%;
+  }
+  50% {
+    left: 120%
+  }
+  51% {
+    left: 100%
+  }
+  100% {
+    left: -10%;
+  }
+}
+
+@keyframes moveAliveGhost {
+    0% {
+    left: -20%;
+  }
+  50% {
+    left: 120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+@keyframes moveBlackout {
+  0% {
+    left: -170%;
+  }
+  50% {
+    left: -30%;    
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes ghostFlash {
+  50% {
+    background: black;
+  }
+}      
