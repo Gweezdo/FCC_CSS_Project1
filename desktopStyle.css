@@ -1,47 +1,53 @@
+html{
+  font-size: 62.5%;
+}
+
+body{
+  background-color: #000;
+}
+
 #main {
-  
+  color: white;
+  font-family: helvetica, monospace;
 }
-#title {
-  
-}
+
 header {
   position: relative;
-  top: 30px;
   text-align: center;
   font-family: Bungee Outline, monospace;
-/*   color: yellow; */
-  margin: auto 23% 70px 23%;
-  padding-top: 1px;
-  padding-bottom: 0px;
-  border-collapse: separate;
-  border: 8px solid red;
-  border-radius: 20px;
+  margin: 7.0rem 0rem 7.0rem 0rem;
+  width: 70rem;
+  left: calc(50% - 35rem);
+  border: 2px solid red;
+  border-radius: 2rem;
   background-color: black;
-/*   box-shadow: 15px 10px 50px; */
+}
+
+header div{
+  border: 0.2rem solid red;
+  margin: 0.3rem 0.3rem;
+  border-radius: 1.5rem;
 }
 
 h1 {
   position: relative;
-  top: -10px;
-  font-size: 60px;
-  line-height: 12pt;
+  font-size: 6.0rem;
+  line-height: 1.5rem;
   color: yellow;
-  padding: 10px 10px;
+  padding: 1.0rem 1.0rem 1.5rem 1.0rem;
 }
 
 #header-text {
-  position: relative;
   font-family: helvetica;
-  font-size: 25px;
-  line-height: 6pt;
+  font-size: 2.5rem;
+  line-height: 0.6px;
   color: white;
   font-weight: 400;
-/*   font: normal; */
 }
 
 #img-div {
   position: relative;
-  top: -20px;
+  margin-top: 10rem;
   width: 100%;
 	display: grid;
 	height: auto;
@@ -50,7 +56,7 @@ h1 {
 }
 
 #image {
-  border-radius: 50%;
+  border-radius: 20%;
   max-width: 100%;
 	display: block;
 	height: auto;
@@ -59,33 +65,74 @@ h1 {
   margin-right: auto;
 }
 
-#img-caption {
-  text-align: center;
-  font-family: helvetica, monospace;
-  font-size: 1.2em;
-  color: white;
-}
 h2 {
   text-align: center;
-  background: white;
+  font-size: 2.4rem;
 }
-#tribute-info {
-  position: relative;
+
+.row {
+  display: flex;
+  flex-direction: row;
   font-family: helvetica, monospace;
   text-align: left;
-  margin-left: 20%;
-  font-size: 1.1em;
-  
+  font-size: 2.0rem;
 }
+
+.col1{
+  padding: 5px 0px 0px 0px;
+  top: 0;
+  font-size: 30px;
+  line-height: 15px;
+}
+
+.col2{
+  padding-left: 20px;
+}
+
+.col1 p{
+  line-height: 0;
+  padding: 18px 0px 10px 0;
+  margin: 10px 0 10px 0;
+}
+
+#b1{
+  height: 20px;
+}
+
+#b2{
+  height: 20px;
+}
+
+.border-style{
+  position: relative;
+  width: 10px;
+  height: calc(100% - 55px);
+  border: solid rgb(4, 17, 186) 2px;
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
+  left: 28px;
+}
+
+#tribute-info{
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
 #tribute-link {
   font-family: helvetica, monospace;
   font-size: 1.1em;
 }
 
+hr{
+  margin-top: 100px
+}
+
 footer {
   font-family: helvetica, monospace;
-  font-size: 1.1em;
+  font-size: 15px;
   text-align: center;
+  color: white;
 }
 
 /* PATH OF TRAVEL */
@@ -95,26 +142,25 @@ footer {
   height: 100px;
   width: 100%;
   overflow: hidden;
-  background-color: red;
   padding: 20px;
   box-sizing: border-box;
 }
 
-/* @media (max-width: 1000px) {
+@media (max-width: 1000px) {
   .path {
-    background-color: red;
-    transform: scale(0.5);
+    transform: scale(0.6);
   }
-} */
-  .path::after {
-    content: "";
-    position: absolute;
-    display: block;
-    border-top: 12px dotted white;
-    width: 95%;
-    left: 2.5%;
-    top: 50%;
-    margin-top: -6px;
+}
+
+.path::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-top: 12px dotted white;
+  width: 95%;
+  left: 2.5%;
+  top: 50%;
+  margin-top: -6px;
 }
 
 /* PACMAN */
@@ -123,7 +169,7 @@ footer {
   position: absolute;
   z-index: 99;
   top: 50%;
-  animation: movePmanForward 16s linear infinit; /* Add 'e' to infinite */
+  animation: movePmanForward 16s linear infinite;
 }
 
 .pacman::before, .pacman::after {
@@ -137,19 +183,17 @@ footer {
   border-radius: 50%;
   border-right-color: transparent;
   border-bottom-color: transparent;
-  
 }
 
 .pacman::after{
   border-color: #FFEE00;
   border-top-color: transparent;
   border-right-color: transparent;
-  animation: mouthBottom 0.7s ease infinit; /* Add 'e' to infinite */
-
+  animation: mouthBottom 0.7s ease infinite;
 }
 
 .pacman::before {
-  animation: mouthTop 0.7s ease infinit; /* Add 'e' to infinite */
+  animation: mouthTop 0.7s ease infinite;
 }
 
 /* BLACKOUT */
@@ -163,7 +207,7 @@ footer {
   z-index: 98;
   top: 40px;
   left: -120%;
-  animation: moveBlackout 16s linear infinit; /* Add 'e' to infinite */
+  animation: moveBlackout 16s linear infinite;
 }
 
 /* ALIVE GHOST */
@@ -179,7 +223,7 @@ footer {
   margin-top: -35px;
   border-top-left-radius: 35px;
   border-top-right-radius: 35px;
-  animation: moveAliveGhost 16s linear infinit; /* Add 'e' to infinite */
+  animation: moveAliveGhost 16s linear infinite;
   animation-delay: 0.7s;
 }
 
@@ -246,7 +290,7 @@ footer {
   margin-top: -35px;
   border-top-left-radius: 35px;
   border-top-right-radius: 35px;
-  animation: moveDeadGhost 16s linear infinit, ghostFlash 0.5s linear infinit; /* Add 'e' to infinite */
+  animation: moveDeadGhost 16s linear infinite, ghostFlash 0.5s linear infinite;
 }
 
 .ghostDead::before, .ghostDead::after {
@@ -273,7 +317,6 @@ footer {
   left: 10px;
   top: 48px;
 }
-
 
 .skirtDead, .skirtDead::before, .skirtDead:after {
   position: absolute;
